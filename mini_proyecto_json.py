@@ -17,6 +17,16 @@ id_actual = max([e["id"] for e in estudiantes], default=0)
 # Registrar estudiante
 def registrar_estudiante():
     global id_actual  
+    nombre = input("Escribe el nombre del estudiante: ")
+    while nombre != "":
+        id_actual += 1
+        estudiante = {"id": id_actual, "nombre": nombre}
+
+        estudiantes.append(estudiante)
+        guardar_datos()
+
+        print(" Estudiante agregado!\nPara salir presione enter sin ingresar nada")
+        nombre = input("ingrese otro nombre de estudiante: ")
 
     nombre = input("Escribe el nombre del estudiante: ")
 
